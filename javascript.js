@@ -8,7 +8,6 @@ function checkWinner(playerGuess = null, computerSelection = null){
     if(computerSelection === playerGuess){
         result = `You Tie! you played ${playerGuess}! The computer played ${computerSelection}`;
         win = "its a tie"
-
     }else if((computerSelection === "p") && (playerGuess === "r")){
         result = `human looses you played rock! The computer played paper`;
         win = "computerWin";
@@ -31,7 +30,7 @@ function checkWinner(playerGuess = null, computerSelection = null){
         result = `you need a weapon of choice either: paper, rock, scissors`;
         win = "fix"
     }
-    return(win);
+    return(win), (result);
 };
 
 
@@ -49,7 +48,7 @@ for (let i = 1; playerScore <= 4; i++) {
     let playerGuess = prompt(('what is your weapon of choice: Rock, Paper, Scissors?')).slice(0,1).toLowerCase();
     let computerSelection = weapons[Math.floor(Math.random()*weapons.length)];
     console.log(checkWinner(playerGuess, computerSelection));
-    console.log(game(win));
+    game(win)
     console.log(`current score ${playerScore} and ${computerScore}`)
 };
 
